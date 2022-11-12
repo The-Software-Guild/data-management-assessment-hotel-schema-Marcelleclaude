@@ -1,0 +1,53 @@
+-- My Hotel schema SQL script 
+DROP DATABASE IF EXISTS HotelSchema;
+Create database HotelSchema;
+Use HotelSchema;
+
+Create Table Guest(
+guestID int primary key,
+fName varchar(50),
+lName varchar(50),
+address varchar(50),
+city varchar(30),
+state varchar(30),
+zipcode int,
+phoneNumber varchar(30)
+);
+
+Create Table Reservation(
+reservationID int primary key,
+roomID int,
+adult int,
+children int,
+startdate date,
+enddate date,
+price float
+);
+
+create table Room(
+roomID int not null primary key,
+roomTypeID int,
+adaAccess boolean
+);
+
+create table RoomAmenities(
+roomAmenitiesId int not null primary key,
+amenitiesID int,
+adaAccess boolean
+);
+create table RoomType(
+
+RoomTypeID int not null primary key,
+roomTypeDesc varchar(30),
+price float,
+standardocc int,
+maxocc int,
+extraperson int
+);
+
+Create table amenities(
+amenitiesID int not null primary key,
+amenitiesdesc varchar(30)
+);
+
+
